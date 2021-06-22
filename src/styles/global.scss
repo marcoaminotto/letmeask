@@ -1,0 +1,30 @@
+:root {
+  --background-color: #f8f8f8;
+  --background-lighter-color: #fff;
+  --border-color: #a8a8b3;
+  --text-dark-color: #29292e;
+  --text-silver-color: #a8a8b3;
+  --text-light-color: #f8f8f8;
+  --text-lighter-color: #fff;
+  --main-color: #835afd;
+  --main-button-color: #835afd;
+  --red-button-color: #ea4335;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background-color);
+  color: var(--text-dark-color);
+}
+
+body,
+input,
+button,
+textarea {
+  font: 400 1rem "Roboto", sans-serif;
+}
