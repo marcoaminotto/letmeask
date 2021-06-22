@@ -1,0 +1,23 @@
+:root {
+  --background-color: #f8f8f8;
+  --text-color: #29292e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+body,
+input,
+button,
+textarea {
+  font: 400 1rem "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
