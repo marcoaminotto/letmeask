@@ -19,6 +19,12 @@
     margin-right: 0.5rem;
   }
 
+  &.outlined {
+    background: var(--background-lighter-color);
+    border: 0.0625rem solid var(--main-button-color);
+    color: var(--main-button-color);
+  }
+
   &:not(:disabled):hover {
     filter: brightness(0.9);
   }
