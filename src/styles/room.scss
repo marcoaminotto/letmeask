@@ -60,7 +60,25 @@
         align-items: center;
         margin-top: 1rem;
 
-        span {
+        .user-info {
+          display: flex;
+          align-items: center;
+
+          img {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+          }
+
+          span {
+            margin-left: 0.5rem;
+            color: var(--text-dark-color);
+            font-weight: 500;
+            font-size: 0.875rem;
+          }
+        }
+
+        > span {
           font-size: 0.875rem;
           color: var(--paragraph-basic-color);
           font-weight: 500;
