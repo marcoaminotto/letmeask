@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/marcoaminotto/letmeask/blob/main/public/logo.svg" alt="Image of the Letmeask application" width="300px">
+  <img src="https://github.com/marcoaminotto/letmeask/blob/main/src/assets/images/logo.svg" alt="Image of the Letmeask application" width="300px">
 </p>
 
 <p align="center">	
@@ -23,10 +23,10 @@ Letmeask is a website of real time question and answer of your followers, focus 
 
 <div align="center">
   <p align="center">
-    <img src="./.github/home-page.png" width="475px">
+    <img src="./.github/home-page.png" width="475px" alt="Home page">
   </p>
   <p align="center">
-    <img src="./.github/room-page.png" width="475px">
+    <img src="./.github/room-page.png" width="475px" alt="Room page">
   </p> 
 </div>
 
