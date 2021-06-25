@@ -1,5 +1,6 @@
 import { FormEvent, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { toast, Toaster } from 'react-hot-toast';
 
 import { useAuth } from '../hooks/useAuth';
 import { database } from '../services/firebase';
@@ -11,7 +12,6 @@ import googleIconImg from '../assets/images/google-icon.svg';
 import { Button } from '../components/Button';
 
 import '../styles/auth.scss';
-
 
 export function Home() {
   const history = useHistory();
@@ -41,11 +41,21 @@ export function Home() {
       return;
     }
 
+    if (roomRef.val().endedAt) {
+      toast('Room already closed', {
+        icon: '⛔',
+      });
+      return;
+    }
+
     history.push(`/rooms/${roomCode}`);
   }
 
   return (
     <div id="page-auth">
+      <div>
+        <Toaster />
+      </div>
       <aside>
         <img
           src={illustrationImg}

@@ -1,4 +1,5 @@
 import { useParams } from 'react-router';
+import { useHistory } from 'react-router-dom';
 
 import { Button } from '../components/Button';
 import { RoomCode } from '../components/RoomCode';
@@ -17,6 +18,7 @@ type RoomParams = {
 };
 
 export function AdminRoom() {
+  const history = useHistory();
   const params = useParams<RoomParams>();
   //const { user } = useAuth();
   const roomId = params.id;
@@ -24,10 +26,16 @@ export function AdminRoom() {
 
   async function handleDeleteQuestion(questionId: string) {
     if (window.confirm('Are you sure that you want to remove this question?')) {
-      const questionRef = await database
-        .ref(`rooms/${roomId}/questions/${questionId}`)
-        .remove();
+      await database.ref(`rooms/${roomId}/questions/${questionId}`).remove();
     }
+  }
+
+  async function handleEndRoom() {
+    await database.ref(`rooms/${roomId}`).update({
+      endedAt: new Date(),
+    });
+
+    history.push('/');
   }
 
   return (
@@ -37,7 +45,9 @@ export function AdminRoom() {
           <img src={logoImg} alt="Letmeask logo" />
           <div>
             <RoomCode code={roomId} />
-            <Button isOutlined>Close room</Button>
+            <Button isOutlined onClick={handleEndRoom}>
+              Close room
+            </Button>
           </div>
         </div>
       </header>
