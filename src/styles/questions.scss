@@ -8,6 +8,19 @@
     margin-top: 0.5rem;
   }
 
+  &.highlighted {
+    background: var(--special-icon-color);
+    border: 0.0625rem solid var(--main-button-color);
+
+    footer .user-info span {
+      color: var(--text-dark-color);
+    }
+  }
+
+  &.answered {
+    background: var(--background-gray-color);
+  }
+
   p {
     color: var(--text-dark-color);
   }
@@ -17,48 +30,53 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 1.5rem;
-  }
 
-  .user-info {
-    display: flex;
-    align-items: center;
-
-    img {
-      width: 2rem;
-      height: 2rem;
-      border-radius: 50%;
-    }
-
-    span {
-      margin-left: 0.5rem;
-      color: var(--paragraph-basic-color);
-      font-size: 0.75rem;
-    }
-  }
-
-  button {
-    border: 0;
-    background: transparent;
-    cursor: pointer;
-    transition: filter 0.2s;
-
-    &.like-button {
+    .user-info {
       display: flex;
-      align-items: flex-end;
-      color: var(--paragraph-basic-color);
-      gap: 0.5rem;
+      align-items: center;
 
-      &.liked {
-        color: var(--main-color);
+      img {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+      }
 
-        svg path {
-          stroke: var(--main-color);
-        }
+      span {
+        margin-left: 0.5rem;
+        color: var(--paragraph-basic-color);
+        font-size: 0.75rem;
       }
     }
 
-    &:hover {
-      filter: brightness(0.7);
+    > div {
+      display: flex;
+      gap: 1rem;
+    }
+
+    button {
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      transition: filter 0.2s;
+
+      &.like-button {
+        display: flex;
+        align-items: flex-end;
+        color: var(--paragraph-basic-color);
+        gap: 0.5rem;
+
+        &.liked {
+          color: var(--main-color);
+
+          svg path {
+            stroke: var(--main-color);
+          }
+        }
+      }
+
+      &:hover {
+        filter: brightness(0.7);
+      }
     }
   }
 }
