@@ -2,16 +2,15 @@ import { FormEvent, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { toast, Toaster } from 'react-hot-toast';
 
-import { useAuth } from '../hooks/useAuth';
-import { database } from '../services/firebase';
+import { useAuth } from '../../hooks/useAuth';
+import { database } from '../../services/firebase';
+import { Button } from '../../components/Button';
 
-import illustrationImg from '../assets/images/illustration.svg';
-import logoImg from '../assets/images/logo.svg';
-import googleIconImg from '../assets/images/google-icon.svg';
+import illustrationImg from '../../assets/images/illustration.svg';
+import logoImg from '../../assets/images/logo.svg';
+import googleIconImg from '../../assets/images/google-icon.svg';
 
-import { Button } from '../components/Button';
-
-import '../styles/auth.scss';
+import './styles.scss';
 
 export function Home() {
   const history = useHistory();
@@ -36,8 +35,7 @@ export function Home() {
     const roomRef = await database.ref(`rooms/${roomCode}`).get();
 
     if (!roomRef.exists()) {
-      console.log(roomRef);
-      alert('Room does not exists');
+      toast.error('Room does not exists');
       return;
     }
 

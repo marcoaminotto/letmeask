@@ -87,56 +87,5 @@
         color: var(--secondary-color);
       }
     }
-
-    .create-room {
-      margin-top: 4rem;
-      height: 3.125rem;
-      border-radius: 0.5rem;
-      font-weight: 500;
-      background: var(--red-button-color);
-      color: var(--text-lighter-color);
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      cursor: pointer;
-      border: 0;
-
-      transition: filter 0.2s;
-
-      img {
-        margin-right: 0.5rem;
-      }
-
-      &:hover {
-        filter: brightness(0.9);
-      }
-    }
-
-    .separator {
-      font-size: 0.875rem;
-      color: var(--text-silver-color);
-
-      margin: 2rem 0;
-      display: flex;
-      align-items: center;
-
-      &::before {
-        content: "";
-        flex: 1;
-        height: 0.0625rem;
-        background-color: var(--text-silver-color);
-        margin-right: 1rem;
-      }
-
-      &::after {
-        content: "";
-        flex: 1;
-        height: 0.0625rem;
-        background-color: var(--text-silver-color);
-        margin-left: 1rem;
-      }
-    }
   }
 }
